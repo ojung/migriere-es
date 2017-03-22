@@ -1,0 +1,25 @@
+{
+  "name": "migriere-es",
+  "version": "0.1.0",
+  "description": "A tool to migrate elastic search mappings. It works by creating a new index each time a migration runs and then moves the data to the new index. The latest index is aliased to a name that can be used consistently.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ojung/migriere-es.git"
+  },
+  "keywords": [
+    "elastic",
+    "search",
+    "mapping",
+    "migration"
+  ],
+  "author": "Oskar Jung",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ojung/migriere-es/issues"
+  },
+  "homepage": "https://github.com/ojung/migriere-es#readme"
+}
