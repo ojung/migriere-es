@@ -10,8 +10,8 @@ commander
   .version('0.1.0')
   .option('-i, --index <index>', 'The index name.')
   .option('-m, --mappings <mappings>', 'A json file with mappings.')
-  .option('-n, --new', 'Create new index without migrating.')
-  .option('-u, --url [url]', 'The address of elastic search. Defaults to `localhost:9200`.')
+  .option('-n, --new', 'Create new index without reindexing.')
+  .option('-u, --url [url]', 'An url to a elasticsearch node. Defaults to `localhost:9200`.')
   .option('-l, --log-level [loglevel]', 'The log level. Defaults to `error`. Set this option to' +
           '`debug` to see the queries this script performs.')
   .parse(process.argv);
