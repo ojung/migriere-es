@@ -18,3 +18,6 @@ cumbersome I wrote this script which allows you to easily migrate your elasticse
     -u, --url [url]             An url to a elasticsearch node. Defaults to `localhost:9200`.
     -l, --log-level [loglevel]  The log level. Defaults to `error`. Set this option to`debug` to see the queries this script performs.
 ```
+
+## Install
+`npm install -g migriere-es`
