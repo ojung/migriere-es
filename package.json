@@ -1,6 +1,6 @@
 {
   "name": "migriere-es",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A tool to migrate elastic search mappings. It works by creating a new index each time a migration runs and then moves the data to the new index. The latest index is aliased to a name that can be used consistently.",
   "bin": {
     "migriere-es": "bin/migriere-es"

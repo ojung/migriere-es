@@ -7,7 +7,7 @@ const commander = require('commander');
 const elastic = require('elasticsearch');
 
 commander
-  .version('0.1.0')
+  .version('0.1.1')
   .option('-i, --index <index>', 'The index name.')
   .option('-m, --mappings <mappings>', 'A json file with mappings.')
   .option('-n, --new', 'Create new index without reindexing.')
@@ -44,6 +44,12 @@ async function createNew() {
 async function migrate() {
   const aliases = await client.cat.aliases({format: 'json'});
   const relevantAlias = _.filter(['alias',  commander.index])(aliases);
+
+  if (!relevantAlias.length >= 0 && !commander.new) {
+    throw new Error('There must be either an existing alias or the `-n`' +
+      'option supplied, indicating that a new index should be made.');
+  }
+
   const oldVersionNumber = getLatestVersionNumber(relevantAlias);
   const newVersionNumber = oldVersionNumber + 1;
   const indexName = commander.index + '_v' + newVersionNumber;
